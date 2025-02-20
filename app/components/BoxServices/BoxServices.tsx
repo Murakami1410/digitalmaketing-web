@@ -13,7 +13,7 @@ export default function BoxProgramas(props: BoxProgramasProps) {
     const [currentImage, setCurrentImage] = useState(props.image_component);
 
     return (
-        <div className={`w-1/3 flex gap-8 items-center shadow-xl  rounded-md p-14 text-black w-full bg-transparent hover:scale-2`}>
+        <div className={` flex gap-8 items-center shadow-xl  rounded-md p-14 text-black w-full bg-transparent hover:scale-2`}>
             <div className="flex flex-col gap-4">
             <div className="w-fit">
                 <Image 
