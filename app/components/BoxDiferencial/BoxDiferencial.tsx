@@ -1,19 +1,23 @@
 import { useState, useEffect } from "react";
+import CustomButtom from "../CustomButtom";
+import Image, { StaticImageData } from "next/image";
 import { motion, useAnimation } from "framer-motion";
 
-interface BoxAnaliseProps {
+interface BoxDiferencialProps {
     title: string;
     description: string;
+    image_component: StaticImageData;
 }
 
-export default function BoxAnalise(props: BoxAnaliseProps) {
+export default function BoxDiferencial(props: BoxDiferencialProps) {
+    const [currentImage, setCurrentImage] = useState(props.image_component);
     const controls = useAnimation();
     const [lastScrollY, setLastScrollY] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > lastScrollY) {
-                controls.start({ opacity: 1, x: 0 });
+                controls.start({ opacity: 1, y: 0, transition: { duration: 2 } });
             }
             setLastScrollY(window.scrollY);
         };
@@ -24,17 +28,19 @@ export default function BoxAnalise(props: BoxAnaliseProps) {
 
     return (
         <motion.div
-            initial={{ opacity: 0, x: -window.innerWidth }}
+            initial={{ opacity: 0, y: 50, transition: { duration: 2 } }}
             animate={controls}
-            transition={{ duration: 2 }} // Aumentando a duração da transição para 2 segundos
-            className={`w-full bg-[#111827] flex gap-8 items-center shadow-xl rounded-md p-10 hover:scale-2`}
+            className={`flex gap-8 items-center shadow-xl rounded-md p-14 text-black w-full bg-transparent`}
         >
             <div className="flex flex-col gap-4">
+                <div className="w-fit">
+                    <Image src={currentImage} alt="." />
+                </div>
                 <div className="w-full">
-                    <p className='text-[16px] font-light py-3 text-white opacity-80'>
+                    <p className='text-[28px] font-bold py-3 text-white'>
                         {props.title}
                     </p>
-                    <p className='text-[28px] font-bold text-white'>
+                    <p className='text-[16px] font-light text-white opacity-80'>
                         {props.description}
                     </p>
                 </div>

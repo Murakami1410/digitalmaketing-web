@@ -17,6 +17,10 @@ import escudo from "../public/escudo.svg";
 import raio from "../public/raio.svg";
 import time from "../public/time.svg";
 import send from "../public/send.svg";
+import { motion } from "framer-motion";
+import CountUp from "react-countup";
+import BoxDiferencial from "./components/BoxDiferencial/BoxDiferencial";
+
 
 const data = [
   {
@@ -63,23 +67,43 @@ const data = [
   },
 ];
 
+const typingAnimation = {
+  hidden: { width: 0 },
+  visible: {
+    width: "100%",
+    transition: {
+      type: "spring",
+      stiffness: 50,
+      damping: 20,
+      duration: 2,
+    },
+  },
+};
+
+
+
 export default function Home() {
+
+
   return (
     <div className="">
       <section className="h-screen flex items-center justify-center relative px-6">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557264322-b44d383a2906?auto=format&fit=crop&q=80')] opacity-20 bg-cover bg-center" />
         <div className="flex flex-col items-center justify-center absolute inset-0 text-center px-4">
-          <h1 className="text-[32px] md:text-[52px] font-bold leading-tight ">
-            Transforme Sua Presença <span className="bg-gradient-to-r from-[#2e005c] to-[#090979] inline-block text-transparent bg-clip-text"> Digital</span>
-          </h1>
-          <p className="w-full md:w-2/3 opacity-80 text-base md:text-lg mt-4">
-            Criamos estratégias de marketing digital de ponta que geram resultados e fazem seu negócio crescer.
-          </p>
-          <CustomButtom
-            title="Saiba Mais"
-            className="mt-10 p-3 font-bold text-white rounded-full border-2 hover:border-blue-500 hover:text-blue-500 transition-all"
-          />
+          <h1 className="typewriter text-[28px] sm:text-[36px] md:text-[52px] lg:text-[60px] font-bold leading-tight">Transforme Sua Presença <span className="bg-gradient-to-r from-[#2e005c] to-[#090979] inline-block text-transparent bg-clip-text">Digital</span></h1>
 
+          <motion.p
+            initial={{ opacity: 0, y: 20 }} // Começa invisível e levemente deslocado para baixo
+            animate={{ opacity: 0.8, y: 0 }} // Anima para a posição normal com opacidade 80%
+            transition={{ duration: 1, ease: "easeOut" }} // Transição suave
+            className="w-full md:w-2/3 opacity-80 text-base md:text-lg mt-4"
+          >
+            Criamos estratégias de marketing digital de ponta que geram resultados e fazem seu negócio crescer.
+          </motion.p>
+
+          <div className="flex flex-row items-center justify-center gap-4">
+            <CustomButtom title="Saiba Mais" className="mt-4 px-6 py-3 font-bold text-white rounded-full bg-blue-600 hover:bg-[#00186F] transition-all" />
+          </div>
         </div>
       </section>
 
@@ -97,11 +121,11 @@ export default function Home() {
       <section className="bg-[#111827] mt-10 p-6 md:p-20 text-center text-white">
         <h1 className="font-bold text-3xl md:text-4xl">Porque Escolher a Gente</h1>
         <p className="opacity-80 max-w-2xl mx-auto">Oferecemos soluções de marketing digital para seu crescimento.</p>
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
-          <BoxServices image_component={escudo} description="Segurança e confiança garantidas" title="Estratégia Digital" />
-          <BoxServices image_component={raio} description="Agilidade na execução e resultados rápidos" title="Social Media" />
-          <BoxServices image_component={time} description="Equipe experiente e especializada" title="Otimização de SEO" />
-          <BoxServices image_component={barra} description="Análise completa e relatórios detalhados" title="Análise & Reports" />
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 lg:w-2/4 lg:mx-auto lg:gap-20  gap-8 mt-8">
+          <BoxDiferencial image_component={escudo} description="Segurança e confiança garantidas" title="Estratégia Digital" />
+          <BoxDiferencial  image_component={raio} description="Agilidade na execução e resultados rápidos" title="Social Media" />
+          <BoxDiferencial  image_component={time} description="Equipe experiente e especializada" title="Otimização de SEO" />
+          <BoxDiferencial  image_component={barra} description="Análise completa e relatórios detalhados" title="Análise & Reports" />
         </div>
       </section>
 
@@ -153,7 +177,7 @@ export default function Home() {
       </section>
 
       <section className="gradient-dois w-full flex flex-col gap-12 p-8 md:p-16 lg:p-20">
-      
+
         <div className="w-full flex flex-col items-center text-center mt-10">
           <h1 className="font-bold text-2xl md:text-4xl">Crescimento dos nossos Clientes</h1>
           <p className="opacity-80 max-w-lg md:max-w-2xl">
@@ -177,8 +201,8 @@ export default function Home() {
           <input type="email" placeholder="Email" className=" bg-transparent p-3 w-full border rounded-md focus:ring-2 focus:ring-blue-500" />
           <textarea placeholder="Descrição" className="bg-transparent p-3 w-full border rounded-md focus:ring-2 focus:ring-blue-500" rows={5} />
           <div className="flex flex-row items-center justify-center gap-4">
-            <CustomButtom title="Send Message" className="mt-4 px-6 py-3 font-bold text-white rounded-full bg-blue-600 hover:bg-blue-500 transition-all" />
-            
+            <CustomButtom title="Send Message" className="mt-4 px-6 py-3 font-bold text-white rounded-full  hover:bg-[#00186F] transition-all" />
+
           </div>
         </form>
       </section>

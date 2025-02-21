@@ -28,6 +28,27 @@ body {
 .gradient-dois{
   background: rgb(153,153,153);
   background: linear-gradient(180deg, rgba(15,0,69,1) 20%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
-
 }
 
+.typewriter {
+  color: #fff;
+  font-family: sans-serif;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: 
+    typing 5.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: rgb(255, 255, 255); }
+}
