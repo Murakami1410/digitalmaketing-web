@@ -9,9 +9,14 @@ import foguete from "../public/foguete.svg";
 import globo from "../public/globo.svg";
 import { PureComponent } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import seta from "../public/Seta.svg";
+import seta from "../public/seta.svg";
 import BoxAnalise from "./components/BoxAnalise/BoxAnalise";
 import BoxClientes from "./components/BoxClientes/BoxClientes";
+import barra from "../public/barra.svg";
+import escudo from "../public/escudo.svg";
+import raio from "../public/raio.svg";
+import time from "../public/time.svg";
+import send from "../public/send.svg";
 
 const data = [
   {
@@ -64,7 +69,7 @@ export default function Home() {
       <section className="h-screen flex items-center justify-center relative px-6">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557264322-b44d383a2906?auto=format&fit=crop&q=80')] opacity-20 bg-cover bg-center" />
         <div className="flex flex-col items-center justify-center absolute inset-0 text-center px-4">
-          <h1 className="text-[32px] md:text-[52px] font-bold leading-tight">
+          <h1 className="text-[32px] md:text-[52px] font-bold leading-tight ">
             Transforme Sua Presença <span className="bg-gradient-to-r from-[#2e005c] to-[#090979] inline-block text-transparent bg-clip-text"> Digital</span>
           </h1>
           <p className="w-full md:w-2/3 opacity-80 text-base md:text-lg mt-4">
@@ -74,50 +79,41 @@ export default function Home() {
             title="Saiba Mais"
             className="mt-10 p-3 font-bold text-white rounded-full border-2 hover:border-blue-500 hover:text-blue-500 transition-all"
           />
+
         </div>
       </section>
 
-      <section className="container mx-auto mt-10 p-6 flex flex-col items-center text-center">
-        <h1 className="font-bold text-[32px] md:text-[48px]">Nossos Serviços</h1>
-        <p className="opacity-80 max-w-2xl">Oferecemos soluções abrangentes de marketing digital para ajudar sua empresa a prosperar no digital.</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
-          <BoxServices image_component={foguete} description='Estratégias digitais abrangentes adaptadas aos seus objetivos de negócios' title='Estrategia Digital' />
-          <BoxServices image_component={alvo} description='Envolvendo o gerenciamento de mídia social e a criação de conteúdo' title='Social Media' />
-          <BoxServices image_component={globo} description='Técnicas avançadas de SEO para melhorar sua visibilidade online' title='Otimização de SEO' />
-          <BoxServices image_component={seta} description='Análise detalhada e acompanhamento de desempenho' title='Analise & Reports' />
+      <section className="container mx-auto mt-10 p-4 md:p-6 text-center">
+        <h1 className="font-bold text-3xl md:text-4xl">Nossos Serviços</h1>
+        <p className="opacity-80 max-w-2xl mx-auto">Oferecemos soluções abrangentes de marketing digital para ajudar sua empresa a prosperar no digital.</p>
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+          <BoxServices image_component={foguete} description="Estratégias digitais abrangentes adaptadas aos seus objetivos" title="Estratégia Digital" />
+          <BoxServices image_component={alvo} description="Gerenciamento de mídia social e criação de conteúdo" title="Social Media" />
+          <BoxServices image_component={globo} description="SEO avançado para melhorar sua visibilidade online" title="Otimização de SEO" />
+          <BoxServices image_component={seta} description="Análise detalhada e acompanhamento de desempenho" title="Análise & Reports" />
         </div>
       </section>
 
-      <section className="bg-[#111827] mt-10 p-6 md:p-20 flex flex-col items-center text-center text-white">
-        <h1 className="font-bold text-[32px] md:text-[48px]">Porque Escolher a Gente</h1>
-        <p className="opacity-80 max-w-2xl">Oferecemos soluções abrangentes de marketing digital para ajudar sua empresa a prosperar no digital.</p>
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
-          <BoxServices image_component={foguete} description='Estratégias digitais abrangentes adaptadas aos seus objetivos de negócios' title='Estrategia Digital' />
-          <BoxServices image_component={alvo} description='Envolvendo o gerenciamento de mídia social e a criação de conteúdo' title='Social Media' />
-          <BoxServices image_component={globo} description='Técnicas avançadas de SEO para melhorar sua visibilidade online' title='Otimização de SEO' />
-          <BoxServices image_component={seta} description='Análise detalhada e acompanhamento de desempenho' title='Analise & Reports' />
+      <section className="bg-[#111827] mt-10 p-6 md:p-20 text-center text-white">
+        <h1 className="font-bold text-3xl md:text-4xl">Porque Escolher a Gente</h1>
+        <p className="opacity-80 max-w-2xl mx-auto">Oferecemos soluções de marketing digital para seu crescimento.</p>
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+          <BoxServices image_component={escudo} description="Segurança e confiança garantidas" title="Estratégia Digital" />
+          <BoxServices image_component={raio} description="Agilidade na execução e resultados rápidos" title="Social Media" />
+          <BoxServices image_component={time} description="Equipe experiente e especializada" title="Otimização de SEO" />
+          <BoxServices image_component={barra} description="Análise completa e relatórios detalhados" title="Análise & Reports" />
         </div>
       </section>
 
       <section className="gradient-um w-full flex flex-col gap-20 p-20">
         <div className="w-full flex flex-col  items-center justify-center ">
-          <h1 className="font-bold text-[32px] md:text-[48px]">Crescimento dos nossos Clientes</h1>
-          <p className="opacity-80 max-w-2xl w-2/5">Oferecemos soluções abrangentes de marketing digital para ajudar sua empresa a prosperar no digital.</p>
+          <h1 className="font-bold text-3xl md:text-4xl">Crescimento dos nossos Clientes</h1>
+          <p className="opacity-80 max-w-2xl mx-auto">Ajudamos empresas a alcançar resultados extraordinários.</p>
         </div>
-        <div className="flex flex-row">
-          <div className="bg-transparent w-1/2">
-            <ResponsiveContainer width="100%" height={400}>
-              <AreaChart
-                width={500}
-                height={400}
-                data={data}
-                margin={{
-                  top: 10,
-                  right: 30,
-                  left: 0,
-                  bottom: 0,
-                }}
-              >
+        <div className="flex flex-col md:flex-row items-center mt-8 gap-10">
+          <div className="w-full md:w-1/2">
+            <ResponsiveContainer width="100%" height={300}>
+              <AreaChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
                 <YAxis />
@@ -126,6 +122,7 @@ export default function Home() {
               </AreaChart>
             </ResponsiveContainer>
           </div>
+
           <div className="flex flex-col gap-5 mx-auto">
             <div className="flex flex-row gap-10">
               <BoxAnalise title="Conversion Rate" description="15,8%" />
@@ -139,52 +136,51 @@ export default function Home() {
         </div>
 
 
-        <div className=" flex flex-row gap-40 justify-center mx-auto p-20">
-          <div className="text-center">
-            <h1 className="text-[40px]">500+</h1>
-            <p className="opacity-80">Clientes</p>
-          </div>
+        <div className="flex flex-wrap justify-center gap-10 md:gap-20 lg:gap-40 p-10 md:p-20 text-center">
+          {[
+            { value: "500+", label: "Clientes" },
+            { value: "95%", label: "Taxa de Sucesso" },
+            { value: "10M+", label: "Alcance" },
+            { value: "24/7", label: "Suporte" },
+          ].map((item, index) => (
+            <div key={index} className="w-1/2 sm:w-1/3 md:w-auto">
+              <h1 className="text-3xl md:text-4xl font-bold">{item.value}</h1>
+              <p className="opacity-80">{item.label}</p>
+            </div>
+          ))}
+        </div>
 
-          <div >
-            <h1 className="text-[40px]">95%</h1>
-            <p className="opacity-80">Taxa de Sucesso</p>
-          </div>
-          <div className="text-center">
+      </section>
 
-            <h1 className="text-[40px]">10M+</h1>
-            <p className="opacity-80">Alcance</p>
-          </div>
+      <section className="gradient-dois w-full flex flex-col gap-12 p-8 md:p-16 lg:p-20">
+      
+        <div className="w-full flex flex-col items-center text-center mt-10">
+          <h1 className="font-bold text-2xl md:text-4xl">Crescimento dos nossos Clientes</h1>
+          <p className="opacity-80 max-w-lg md:max-w-2xl">
+            Oferecemos soluções abrangentes de marketing digital para ajudar sua empresa a prosperar no digital.
+          </p>
+        </div>
 
-          <div className="text-center">
-            <h1 className="text-[40px]">24/7</h1>
-            <p className="opacity-80">Suporte</p>
-          </div>
-
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+          <BoxClientes description="Depoimento incrível de um cliente satisfeito." name="Jorge" empresa="CEO ESPM" />
+          <BoxClientes description="Nossa empresa cresceu exponencialmente com essa equipe!" name="Mariana" empresa="Fundadora XYZ" />
+          <BoxClientes description="Resultados excepcionais, equipe altamente qualificada!" name="Carlos" empresa="CMO ABC" />
         </div>
       </section>
 
-      <section className="gradient-dois w-full flex flex-col gap-20 p-20 ">
-        
-        <div className="w-full flex flex-col  items-center justify-center mt-20 ">
-          <h1 className="font-bold text-[32px] md:text-[48px]">Crescimento dos nossos Clientes</h1>
-          <p className="opacity-80 max-w-2xl w-2/5">Oferecemos soluções abrangentes de marketing digital para ajudar sua empresa a prosperar no digital.</p>
-        </div>
-        <div className="w-full grid grid-cols-3 p-2">
-          <BoxClientes description="asdjiasdijasdijasdijasdasdiasdasdijadsasdiasdasdjasdasdiasdasdjsdaiasd" name="Jorge" empresa="CEO ESPM " />
-          <BoxClientes description="asdjiasdijasdijasdijasdasdiasdasdijadsasdiasdasdjasdasdiasdasdjsdaiasd" name="Jorge" empresa="CEO ESPM " />
-          <BoxClientes description="asdjiasdijasdijasdijasdasdiasdasdijadsasdiasdasdjasdasdiasdasdjsdaiasd" name="Jorge" empresa="CEO ESPM " />
-       </div>
-      </section>
 
-      <section>
-        <div className="text-center">
-          <h1 className="text-[48px]">Entre em Contato</h1>
-          <p className="text-[20px] opacity-80"> Pronto para levar sua presença digital para o próximo nível? Contate-nos hoje.</p>
-        </div>
-        <div className="">
-          <input type="text" name="" id="" className="" />
-          <label className="">Nome</label>
-        </div>
+      <section className="bg-black text-white p-10 text-center">
+        <h1 className="text-3xl md:text-4xl">Entre em Contato</h1>
+        <p className="opacity-80 text-lg sm:text-sm">Leve sua presença digital para o próximo nível.</p>
+        <form className="flex flex-col items-center gap-4 mt-8 w-full max-w-md mx-auto">
+          <input type="text" placeholder="Nome" className="bg-transparent p-3 w-full border rounded-md focus:ring-2 focus:ring-blue-500" />
+          <input type="email" placeholder="Email" className=" bg-transparent p-3 w-full border rounded-md focus:ring-2 focus:ring-blue-500" />
+          <textarea placeholder="Descrição" className="bg-transparent p-3 w-full border rounded-md focus:ring-2 focus:ring-blue-500" rows={5} />
+          <div className="flex flex-row items-center justify-center gap-4">
+            <CustomButtom title="Send Message" className="mt-4 px-6 py-3 font-bold text-white rounded-full bg-blue-600 hover:bg-blue-500 transition-all" />
+            
+          </div>
+        </form>
       </section>
 
     </div>
